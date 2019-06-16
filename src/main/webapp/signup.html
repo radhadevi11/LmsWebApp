@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="service.js">
+    </script>
+
+    <script type ="text/javascript">
+        function myAlert(){
+        alert("successfully signed up");
+        }
+    </script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif,margin:30px;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=email] {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+
+
+button:hover {
+  opacity:1;
+}
+
+/*border for heading*/
+
+.heading{
+    border-style:inset;
+    border-width: 5px;
+    border-color: black;
+    background: gray;
+
+}
+
+
+/*border for body*/
+.bodyborder{
+    border-style: outset;
+    border-width: 10px;
+    border-color: gray;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+   max-width: 500px;
+  margin: auto;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<form  style="border:1px solid #ccc" action="/lmsweb/signup" method="POST">
+    <div class="container">
+        <div class="heading">
+            <h1><center>Sign Up</center></h1>
+            <p><center>Please fill in this form to create an account </center></p>
+        </div>
+
+        <hr>
+        <div class="bodyborder">
+            <label for="firstName"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" id="firstName" name="firstName" required>
+
+            <label for="lastName"><b>First Name</b></label>
+            <input type="text" placeholder="Enter Last Name" id="lastName" name="lastName" >
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" id="email" name="email" required>
+
+            <label for="collegeName"><b>College Name</b></label>
+            <input type="text" placeholder="Enter college Name" id="collegeName" name="collegeName" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat" required>
+
+        </div>
+
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit"  onclick="myAlert()" class="signupbtn">Sign Up</button>
+            </div>
+
+    </div>
+</form>
+
+</body>
+</html>

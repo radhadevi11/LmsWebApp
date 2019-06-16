@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lmswebapp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lmswebapp_jar</output-path>
+    <root id="archive" name="lmswebapp.jar">
+      <element id="module-output" name="lmswebapp" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../lmsapp/out/artifacts/lmsapp_jar/lmsapp.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
