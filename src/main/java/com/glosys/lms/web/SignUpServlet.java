@@ -14,23 +14,19 @@ public class SignUpServlet extends HttpServlet {
 
 
         SignUpController signUpController = new SignUpController();
-        System.out.println("object creation for sign up controller");
+
         String firstName = request.getParameter("firstName");
-        System.out.println("FirsrNmme:"+firstName);
         String lastName = request.getParameter("lastName");
-        System.out.println("LastName:"+lastName);
         String emailId = request.getParameter("email");
-        System.out.println("Email:"+emailId);
         String collegeName = request.getParameter("collegeName");
-        String password = request.getParameter("psw");
+        String password = request.getParameter("password");
         String pswRepeat = request.getParameter("psw-repeat");
-        System.out.println("pswRepeat:"+pswRepeat);
 
         SignUp signUp = new SignUp(firstName,lastName,emailId,collegeName,password,pswRepeat);
-        System.out.println("Object creation for sign up");
 
         signUpController.saveSignUp(signUp);
-        System.out.println("saving sign up");
+
+
 
 
 
