@@ -20,7 +20,8 @@ public class SecureFilter implements Filter {
 
         HttpSession session = ((HttpServletRequest)servletRequest).getSession(false);
 
-        if(session == null){
+
+        if(session == null ){
             ((HttpServletResponse)servletResponse).sendRedirect(((HttpServletRequest) servletRequest).
                     getContextPath()+"/login.html");
         }
