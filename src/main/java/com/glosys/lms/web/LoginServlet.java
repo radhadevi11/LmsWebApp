@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
         if(validUser){
             HttpSession session = request.getSession(true);
             session.setAttribute("email",mailId);
+            session.getAttribute("email");
             response.sendRedirect(request.getContextPath()+"/secure/courses.jsp");
         }
         else {

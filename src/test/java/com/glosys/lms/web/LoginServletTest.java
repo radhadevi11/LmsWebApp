@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,10 +31,9 @@ public class LoginServletTest {
     private final String eMail = "d@gmail";
     private final String psw = "111";
 
-
     @Ignore
     @Test
-    public void testDoPost() throws IOException {
+    public void testDoPost() throws IOException, ServletException {
         HttpServletRequest request = mock(HttpServletRequest.class);
         LoginController loginController = mock(LoginController.class);
         HttpSession session = mock(HttpSession.class);
@@ -45,6 +45,8 @@ public class LoginServletTest {
         doReturn(session).when(request).getSession(true);
         doNothing().when(session).setAttribute("email",eMail);
         doNothing().when(response).sendRedirect("/secure/courses.jsp");
+
+        loginServlet.doPost(request, response);
 
         verify(request).getParameter("email");
         verify(request).getParameter("password");
