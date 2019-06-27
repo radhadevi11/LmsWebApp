@@ -1,6 +1,7 @@
 package com.glosys.lms.web;
 
 import com.glosys.lms.controller.LoginController;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -25,26 +26,36 @@ public class LoginServletTest {
 
     @InjectMocks
     @Spy
-    private LoginServlet loginServlet;
-
+    private LoginServlet loginServlet ;
+    @Mock
+    HttpServletRequest request;
+    @Mock
+    HttpServletResponse response;
+    @Mock
+    LoginController loginController;
 
     private final String eMail = "d@gmail";
     private final String psw = "111";
+    private final String contextPath = "localhost:8080/lmsweb";
 
+
+    @Before
+    public void setUp(){
+        doReturn(contextPath).when(request).getContextPath();
+
+    }
     @Ignore
     @Test
     public void testDoPost() throws IOException, ServletException {
-        HttpServletRequest request = mock(HttpServletRequest.class);
-        LoginController loginController = mock(LoginController.class);
+
         HttpSession session = mock(HttpSession.class);
-        HttpServletResponse response = mock(HttpServletResponse.class);
 
         doReturn(eMail).when(request).getParameter("email");
         doReturn(psw).when(request).getParameter("password");
         doReturn(true).when(loginController).isValidUser(eMail, psw);
         doReturn(session).when(request).getSession(true);
         doNothing().when(session).setAttribute("email",eMail);
-        doNothing().when(response).sendRedirect("/secure/courses.jsp");
+        doNothing().when(response).sendRedirect(contextPath+"/secure/courses.jsp");
 
         loginServlet.doPost(request, response);
 
@@ -53,7 +64,8 @@ public class LoginServletTest {
         verify(loginController).isValidUser(eMail, psw);
         verify(request).getSession(true);
         verify(session).setAttribute("email", eMail);
-        verify(response).sendRedirect("/secure/courses.jsp");
+        verify(request).getContextPath();
+        verify(response).sendRedirect(contextPath+"/secure/courses.jsp");
 
 
 

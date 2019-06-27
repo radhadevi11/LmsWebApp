@@ -1,7 +1,8 @@
 package com.glosys.lms.web;
 
-import com.glosys.lms.SignUp;
-import com.glosys.lms.controller.SignUpController;
+
+import com.glosys.lms.Student;
+import com.glosys.lms.controller.StudentController;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
@@ -9,22 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/signup")
-public class SignUpServlet extends HttpServlet {
+public class StudentServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse  response){
 
 
-        SignUpController signUpController = new SignUpController();
+        StudentController studentController = new StudentController();
 
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
+        String gender = request.getParameter("Gender");
         String emailId = request.getParameter("email");
         String collegeName = request.getParameter("collegeName");
         String password = request.getParameter("password");
         String pswRepeat = request.getParameter("psw-repeat");
 
-        SignUp signUp = new SignUp(firstName,lastName,emailId,collegeName,password,pswRepeat);
+        Student student = new Student(firstName,lastName,gender,emailId,collegeName,password);
 
-        signUpController.saveSignUp(signUp);
+        studentController.saveStudent(student);
 
 
 
