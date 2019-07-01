@@ -34,8 +34,8 @@ public class LoginServletTest {
     @Mock
     LoginController loginController;
 
-    private final String eMail = "d@gmail";
-    private final String psw = "111";
+    private final String eMail = "shalu@gmail.com";
+    private final String psw = "123";
     private final String contextPath = "localhost:8080/lmsweb";
 
 
@@ -44,7 +44,7 @@ public class LoginServletTest {
         doReturn(contextPath).when(request).getContextPath();
 
     }
-    @Ignore
+
     @Test
     public void testDoPost() throws IOException, ServletException {
 
@@ -55,7 +55,7 @@ public class LoginServletTest {
         doReturn(true).when(loginController).isValidUser(eMail, psw);
         doReturn(session).when(request).getSession(true);
         doNothing().when(session).setAttribute("email",eMail);
-        doNothing().when(response).sendRedirect(contextPath+"/secure/courses.jsp");
+        doNothing().when(response).sendRedirect(contextPath+"/secure/trainingProgram");
 
         loginServlet.doPost(request, response);
 
@@ -65,7 +65,7 @@ public class LoginServletTest {
         verify(request).getSession(true);
         verify(session).setAttribute("email", eMail);
         verify(request).getContextPath();
-        verify(response).sendRedirect(contextPath+"/secure/courses.jsp");
+        verify(response).sendRedirect(contextPath+"/secure/trainingProgram");
 
 
 
