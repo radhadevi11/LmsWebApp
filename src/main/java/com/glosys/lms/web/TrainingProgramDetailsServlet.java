@@ -1,7 +1,11 @@
 package com.glosys.lms.web;
 
 import com.glosys.lms.WorkshopType;
+import com.glosys.lms.controller.CorporateTrainingController;
+import com.glosys.lms.controller.InplantTrainingController;
 import com.glosys.lms.controller.WorkshopController;
+import com.glosys.lms.model.CorporateTrainingInfo;
+import com.glosys.lms.model.InplantTrainingInfo;
 import com.glosys.lms.model.WorkshopInfo;
 
 import javax.servlet.ServletException;
@@ -25,7 +29,18 @@ public class TrainingProgramDetailsServlet extends HttpServlet {
 
         }
         if(trainingProgramTypeId == 2){
+            InplantTrainingController inplantTrainingController = new InplantTrainingController();
+            InplantTrainingInfo inplantTrainingInfo = inplantTrainingController.getInplantTrainingInfo();
+            request.setAttribute("inplantTrainingInfo",inplantTrainingInfo);
+            request.getRequestDispatcher("/secure/inplantTraining.jsp").forward(request,response);
 
+        }
+
+        if(trainingProgramTypeId == 3){
+            CorporateTrainingController corporateTrainingController = new CorporateTrainingController();
+            CorporateTrainingInfo corporateTrainingInfo = corporateTrainingController.getCorporateTrainingInfo();
+            request.setAttribute("corporateTrainingInfo",corporateTrainingInfo);
+            request.getRequestDispatcher("/secure/corporateTraining.jsp").forward(request, response);
         }
 
 

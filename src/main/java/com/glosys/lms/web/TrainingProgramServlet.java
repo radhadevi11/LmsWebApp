@@ -1,6 +1,8 @@
 package com.glosys.lms.web;
 
+import com.glosys.lms.CourseCategory;
 import com.glosys.lms.TrainingProgramType;
+import com.glosys.lms.controller.CourseCategoryController;
 import com.glosys.lms.controller.TrainingProgramTypeController;
 
 import javax.servlet.RequestDispatcher;
@@ -18,9 +20,16 @@ public class TrainingProgramServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         TrainingProgramTypeController trainingProgramTypeController = new TrainingProgramTypeController();
+        CourseCategoryController courseCategoryController = new CourseCategoryController();
+
         List<TrainingProgramType> programTypes = trainingProgramTypeController.getTrainingProgramTypes();
+        List<CourseCategory> courseCategories = courseCategoryController.getCourseCategories();
+
         request.setAttribute("trainingProgramTypes", programTypes);
-        request.getRequestDispatcher("/secure/courses.jsp").forward(request, response);
+        request.setAttribute("courseCategories", courseCategories);
+
+        request.getRequestDispatcher("/secure/training.jsp").forward(request, response);
+        request.getRequestDispatcher("/secure/training.jsp").forward(request, response);
 
     }
 }
