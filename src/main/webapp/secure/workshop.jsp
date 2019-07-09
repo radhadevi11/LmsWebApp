@@ -12,6 +12,7 @@
         ${workshopType.totalDays}</li>
 </c:forEach>
 </ul>
+<h3>List of courses</h3>
 <ul>
 <c:forEach var="courseForWorkshop" items="${workshopInfo.courses}">
     <li>${courseForWorkshop.name}</li>

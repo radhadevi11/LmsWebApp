@@ -10,6 +10,7 @@
         ${inplantTrainingType.totalDays}</li>
 </c:forEach>
 </ul>
+<h3>List of Courses</h3>
 <ul>
 <c:forEach var="courseForInplantTraining" items="${inplantTrainingInfo.courses}">
     <li>${courseForInplantTraining.name}</li>

@@ -14,7 +14,7 @@
 </ul>
 <h2>Training Courses offered</h2>
 <c:forEach var="category" items="${courseCategories}">
-    <li><a href="trainingProgramDetails?id=${category.id}">${category .name}</a></li>
+    <li><a href="trainingProgramDetails?id=${category.id}">${category.name}</a></li>
 </c:forEach>
 </ul>
 </body>

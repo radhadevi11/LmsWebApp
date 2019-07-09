@@ -11,6 +11,7 @@
 </c:forEach>
 </ul>
 <ul>
+<h3>List of Course</h3>
 <c:forEach var="courseForCorporateTraining" items="${corporateTrainingInfo.courses}">
     <li>${courseForCorporateTraining.name}</li>
 </c:forEach>
