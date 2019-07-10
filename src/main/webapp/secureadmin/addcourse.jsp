@@ -30,6 +30,17 @@ border:1px dotted whitesmoke;
 border-radius: 15px 50px 30px;
 margin:10px;
 }
+p{
+color:red;
+}
+select {
+        width: 150px;
+        margin: 10px;
+}
+select:focus {
+        min-width: 150px;
+        width: auto;
+}
 h2
 {
 text-align:center;
@@ -77,9 +88,13 @@ border-radius: 50px;
 }
 </style>
 </head>
+<body>
+<c:if test="${isExistingCourse}">
+    <p><b> The course Id is already exist can not add existing course</b></p>
+</c:if>
 <div class="wrap">
-<form action="addcourse" method="GET">
-<h2> Sign up</h2>
+<form action="addcourse" method="POST">
+<h2> Add course</h2>
 <input type="text" name="courseName" placeholder="Course name" ><br>
 <input type="text" name="courseCode" placeholder="Course code" ><br>
     <span style="font-size:18px;">Syllabus</span>
@@ -94,15 +109,11 @@ border-radius: 50px;
 <option value="${category.id}">${category.name}</option>
 </c:forEach>
 </select>
-<br>
-Eligibility:<br>
 <input type="checkbox" name="workshop_eligibility" value="TRUE">Workshop Eligibility<br>
-            <input type="checkbox" name="inplant_training_eligibility" value="TRUE">Inplant Training Eligibility<br>
-            <input type="checkbox" name="corporate_training_eligibility" value="TRUE">Corporate Training Eligibility<br>
-            <input type="checkbox" name="research_training_eligibility" value="TRUE">Research Training Eligibility<br>
-        <br>
-
-
+<input type="checkbox" name="inplant_training_eligibility" value="TRUE">Inplant Training Eligibility<br>
+<input type="checkbox" name="corporate_training_eligibility" value="TRUE">Corporate Training Eligibility<br>
+<input type="checkbox" name="research_training_eligibility" value="TRUE">Research Training Eligibility<br>
+ <br>
 <br>
  <input type="submit" value="Save" >
 
