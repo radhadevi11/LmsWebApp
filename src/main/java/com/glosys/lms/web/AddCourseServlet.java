@@ -29,6 +29,14 @@ public class AddCourseServlet extends HttpServlet {
         boolean researchTrainingEligibility = Boolean.parseBoolean(request.getParameter("research_training_eligibility"));
 
         CourseController courseController = new CourseController();
+        Course course = new Course(courseName,
+                courseCode,
+                syllabus,
+                new CourseCategory(courseCategoryId),
+                workshopEligibility,
+                researchTrainingEligibility,
+                inplantTrainingEligibility,
+                corporateTrainingEligibility);
 
         if(courseController.isExistingCourse(courseCode)){
             request.setAttribute("isExistingCourse", true);
@@ -37,19 +45,14 @@ public class AddCourseServlet extends HttpServlet {
             List<CourseCategory> courseCategories = courseCategoryController.getCourseCategories();
 
             request.setAttribute("courseCategories", courseCategories);
+            request.setAttribute("course", course);
 
             request.getRequestDispatcher("/secureadmin/addcourse.jsp").forward(request, response);
         }
         else {
             request.setAttribute("isExistingCourse", false);
-            courseController.saveCourse(new Course(courseName,
-                    courseCode,
-                    syllabus,
-                    new CourseCategory(courseCategoryId),
-                    workshopEligibility,
-                    researchTrainingEligibility,
-                    inplantTrainingEligibility,
-                    corporateTrainingEligibility));
+
+            courseController.saveCourse(course);
         }
 
 

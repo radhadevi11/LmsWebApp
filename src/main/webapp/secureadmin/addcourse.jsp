@@ -90,12 +90,12 @@ border-radius: 50px;
 </head>
 <body>
 <c:if test="${isExistingCourse}">
-    <p><b> The course Id is already exist can not add existing course</b></p>
+    <p><b> The course code is already exist can not add existing course</b></p>
 </c:if>
 <div class="wrap">
 <form action="addcourse" method="POST">
 <h2> Add course</h2>
-<input type="text" name="courseName" placeholder="Course name" ><br>
+<input type="text" name="courseName" placeholder="Course name" value="${course == null?"":course.name}"><br>
 <input type="text" name="courseCode" placeholder="Course code" ><br>
     <span style="font-size:18px;">Syllabus</span>
 <br>
