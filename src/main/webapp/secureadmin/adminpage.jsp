@@ -1,10 +1,12 @@
 <html>
 <body>
 <h1>This is admin page</h1>
-<h3>Welcome<%= session.getAttribute("adminName") %></h3>
+<h3>Welcome <%= session.getAttribute("adminName") %></h3>
 </body>
-    <form name = "modifyCourse" action="adminpage" method="post">
-        <button type="submit">Add Course</button>
+    <form name = "modifyCourse">
+        <Button type="submit" value="addCourse" onclick="form.action='adminpage'; form.method='post'; ">Add Course</Button>
+        <Button type="submit" value="editCourse" onclick="form.action='listOfCourse'; form.method='post'; ">Edit Course</Button>
+
     </form>
 
 </body>
