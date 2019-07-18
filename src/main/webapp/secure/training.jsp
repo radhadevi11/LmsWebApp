@@ -42,8 +42,7 @@
    <tr><td><a href="trainingProgramDetails?id=${program.id}">${program.name}</a></td></tr>
 </c:forEach>
 </table>
-
-
+<br>
 <table id="training">
 <tr><th>Training courses offered</th></tr>
 <c:forEach var="category" items="${courseCategories}">

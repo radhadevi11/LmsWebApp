@@ -54,12 +54,13 @@
     <td>${workshopType.cost}</td>
     </tr>
 </c:forEach>
-</table>
+</table><br>
 <h3><center>List of courses</center></h3>
 <table id="workshop">
-<tr><th>CourseName</th></tr>
+<h3><center><tr><th>CourseName</th></tr></center></h3>
 <c:forEach var="courseForWorkshop" items="${workshopInfo.courses}">
     <tr><td>${courseForWorkshop.name}</td></tr>
 </c:forEach>
+</table>
 </body>
 </html>

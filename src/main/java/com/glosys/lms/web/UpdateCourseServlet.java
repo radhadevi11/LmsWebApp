@@ -24,10 +24,10 @@ public class UpdateCourseServlet extends HttpServlet {
         boolean corporateTrainingEligibility = Boolean.parseBoolean(request.getParameter("corporate_training_eligibility"));
         boolean researchTrainingEligibility = Boolean.parseBoolean(request.getParameter("research_training_eligibility"));
 
-        Course course = new Course(courseName, courseCode, syllabus, new CourseCategory(courseCategoryId),
+        Course course = new Course(id, courseName, courseCode, syllabus, new CourseCategory(courseCategoryId),
                 workshopEligibility, researchTrainingEligibility, inplantTrainingEligibility, corporateTrainingEligibility);
         CourseController courseController = new CourseController();
-        courseController.updateCourseByCourseId(id, course);
+        courseController.updateCourseByCourseId(course);
 
 
 
