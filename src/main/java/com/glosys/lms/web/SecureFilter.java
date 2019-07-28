@@ -16,7 +16,7 @@ public class SecureFilter implements Filter {
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
-
+        System.out.println("Doing secure Filter");
         HttpSession session = ((HttpServletRequest)servletRequest).getSession(false);
 
 

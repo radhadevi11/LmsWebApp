@@ -37,8 +37,11 @@
                 </tr>
                 <c:forEach var="course" items="${courses}">
                     <tr>
-                    <td><a href="editCourse?id=${course.id}">${course.code}</a></td>
-                    <td><a href="editCourse?id=${course.id}">${course.name}</a></td>
+                    <td>${course.code}</td>
+                    <td>${course.name}</a></td>
+                    <td><a href="editCourse?id=${course.id}"><Button>Edit</Button></a></td>
+                    <td><a href="deleteCourse?id=${course.id}"><Button>Delete</Button></a></td>
+
                     </tr>
                  </c:forEach>
             </table>

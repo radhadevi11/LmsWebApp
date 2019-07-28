@@ -6,8 +6,4 @@
     <form name = "modifyCourse">
         <Button type="submit" value="addCourse" onclick="form.action='adminpage'; form.method='post'; ">Add Course</Button>
         <Button type="submit" value="editCourse" onclick="form.action='listOfCourse'; form.method='post'; ">Edit Course</Button>
-
-    </form>
-
-</body>
-</html>
+       
