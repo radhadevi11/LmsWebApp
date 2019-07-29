@@ -1,4 +1,4 @@
-package com.glosys.lms.web;
+package com.glosys.lms.web.admin;
 
 import com.glosys.lms.Course;
 import com.glosys.lms.CourseCategory;
@@ -53,6 +53,7 @@ public class AddCourseServlet extends HttpServlet {
             request.setAttribute("isExistingCourse", false);
 
             courseController.saveCourse(course);
+            response.sendRedirect(request.getContextPath());
         }
 
 

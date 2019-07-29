@@ -1,4 +1,4 @@
-package com.glosys.lms.web;
+package com.glosys.lms.web.student;
 
 import com.glosys.lms.controller.LoginController;
 
@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession(true);
             session.setAttribute("email",mailId);
             response.sendRedirect(request.getContextPath()+"/secure/trainingProgram");
+
         }
         else {
             response.sendRedirect(request.getContextPath()+"/login.html");

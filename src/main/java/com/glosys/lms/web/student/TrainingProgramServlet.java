@@ -1,4 +1,4 @@
-package com.glosys.lms.web;
+package com.glosys.lms.web.student;
 
 import com.glosys.lms.CourseCategory;
 import com.glosys.lms.TrainingProgramType;

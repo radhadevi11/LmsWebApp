@@ -1,4 +1,4 @@
-package com.glosys.lms.web;
+package com.glosys.lms.web.admin;
 
 import com.glosys.lms.Course;
 import com.glosys.lms.CourseCategory;
@@ -8,11 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet("/secureadmin/updateCourse")
 
 public class UpdateCourseServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response){
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         int id = Integer.parseInt(request.getParameter("id"));
         String courseName = request.getParameter("courseName");
@@ -28,6 +29,7 @@ public class UpdateCourseServlet extends HttpServlet {
                 workshopEligibility, researchTrainingEligibility, inplantTrainingEligibility, corporateTrainingEligibility);
         CourseController courseController = new CourseController();
         courseController.updateCourseByCourseId(course);
+        response.sendRedirect(request.getContextPath());
 
 
 

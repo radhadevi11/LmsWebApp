@@ -1,6 +1,7 @@
 package com.glosys.lms.web;
 
 import com.glosys.lms.controller.LoginController;
+import com.glosys.lms.web.student.LoginServlet;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -16,12 +17,12 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import org.junit.runner.RunWith;
 
 @RunWith(MockitoJUnitRunner.class)
 
+@Ignore
 public class LoginServletTest {
 
     @InjectMocks

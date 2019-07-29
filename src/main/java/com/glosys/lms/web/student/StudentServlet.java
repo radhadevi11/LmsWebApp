@@ -1,4 +1,4 @@
-package com.glosys.lms.web;
+package com.glosys.lms.web.student;
 
 
 import com.glosys.lms.Student;
@@ -22,7 +22,7 @@ public class StudentServlet extends HttpServlet {
         String emailId = request.getParameter("email");
         String collegeName = request.getParameter("collegeName");
         String password = request.getParameter("password");
-        String pswRepeat = request.getParameter("psw-repeat");
+
 
         Student student = new Student(firstName,lastName,gender,emailId,collegeName,password);
 
