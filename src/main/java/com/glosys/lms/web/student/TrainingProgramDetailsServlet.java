@@ -18,38 +18,44 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static com.glosys.lms.web.student.TrainingProgram.*;
+
 @WebServlet("/secure/trainingProgramDetails")
 public class TrainingProgramDetailsServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int trainingProgramTypeId = Integer.parseInt(request.getParameter("id"));
 
-        if(trainingProgramTypeId == 1){
-            WorkshopController workshopController = new WorkshopController();
-            WorkshopInfo workshopInfo = workshopController.getWorkshopInfo();
-            request.setAttribute("workshopInfo", workshopInfo);
-            request.getRequestDispatcher("/secure/workshop.jsp").forward(request,response);
 
-        }
-        if(trainingProgramTypeId == 2){
-            InplantTrainingController inplantTrainingController = new InplantTrainingController();
-            InplantTrainingInfo inplantTrainingInfo = inplantTrainingController.getInplantTrainingInfo();
-            request.setAttribute("inplantTrainingInfo",inplantTrainingInfo);
-            request.getRequestDispatcher("/secure/inplantTraining.jsp").forward(request,response);
+        switch (getTrainingProgram(trainingProgramTypeId)){
 
-        }
+            case WORKSHOP:
+                WorkshopController workshopController = new WorkshopController();
+                WorkshopInfo workshopInfo = workshopController.getWorkshopInfo();
+                request.setAttribute("workshopInfo", workshopInfo);
+                request.getRequestDispatcher("/secure/workshop.jsp").forward(request,response);
+                break;
 
-        if(trainingProgramTypeId == 3){
-            CorporateTrainingController corporateTrainingController = new CorporateTrainingController();
-            CorporateTrainingInfo corporateTrainingInfo = corporateTrainingController.getCorporateTrainingInfo();
-            request.setAttribute("corporateTrainingInfo",corporateTrainingInfo);
-            request.getRequestDispatcher("/secure/corporateTraining.jsp").forward(request, response);
-        }
+            case INPLANT_TRAINING:
+                InplantTrainingController inplantTrainingController = new InplantTrainingController();
+                InplantTrainingInfo inplantTrainingInfo = inplantTrainingController.getInplantTrainingInfo();
+                request.setAttribute("inplantTrainingInfo",inplantTrainingInfo);
+                request.getRequestDispatcher("/secure/inplantTraining.jsp").forward(request,response);
+                break;
 
-        if(trainingProgramTypeId == 4){
-            ResearchTrainingController researchTrainingController = new ResearchTrainingController();
-            ResearchTrainingInfo researchTrainingInfo = researchTrainingController.getResearchTrainingInfo();
-            request.setAttribute("researchTrainingInfo", researchTrainingInfo);
-            request.getRequestDispatcher("/secure/researchTraining.jsp").forward(request, response);
+            case CORPORATE_TRAINING:
+                CorporateTrainingController corporateTrainingController = new CorporateTrainingController();
+                CorporateTrainingInfo corporateTrainingInfo = corporateTrainingController.getCorporateTrainingInfo();
+                request.setAttribute("corporateTrainingInfo",corporateTrainingInfo);
+                request.getRequestDispatcher("/secure/corporateTraining.jsp").forward(request, response);
+                break;
+
+            case RESEARCH_TRAINING:
+
+                ResearchTrainingController researchTrainingController = new ResearchTrainingController();
+                ResearchTrainingInfo researchTrainingInfo = researchTrainingController.getResearchTrainingInfo();
+                request.setAttribute("researchTrainingInfo", researchTrainingInfo);
+                request.getRequestDispatcher("/secure/researchTraining.jsp").forward(request, response);
+                break;
 
         }
 

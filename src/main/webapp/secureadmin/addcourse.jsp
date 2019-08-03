@@ -89,6 +89,9 @@ border-radius: 50px;
 </style>
 </head>
 <body>
+<div>
+<%@ include file="header.jsp" %>
+</div>
 <c:if test="${isExistingCourse}">
     <p><b> The course code ${course.code} is already exist can not add existing course</b></p>
 </c:if>

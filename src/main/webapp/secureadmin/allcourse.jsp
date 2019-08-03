@@ -29,6 +29,9 @@
         </style>
       </head>
       <body>
+      <div>
+      <%@ include file="header.jsp" %>
+      </div>
         <h2><center>List Of Courses </center></h2>
             <table name="course" id="course">
                 <tr>

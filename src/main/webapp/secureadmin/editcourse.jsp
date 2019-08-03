@@ -89,6 +89,9 @@ border-radius: 50px;
 </style>
 </head>
 <body>
+<div>
+<%@ include file="header.jsp" %>
+</div>
 <div class="wrap">
 <form action="updateCourse" method="POST">
 <h2> Edit course</h2>

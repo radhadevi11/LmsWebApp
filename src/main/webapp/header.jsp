@@ -42,19 +42,19 @@
     <div class="topnav">
 
     <c:choose>
-        <c:when test="${(session != null && adminName != null)}">
+        <c:when test="${sessionScope.adminName != null}">
              <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
              </a>
-             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${adminName}"</a>
+             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
              <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
-        <c:when test="${(session != null && email != null)}">
+        <c:when test="${sessionScope.email != null}">
                      <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
                      <a style=margin-right:265px>
                      </a>
-                     <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${email}"</a>
+                     <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>${email}</a>
                      <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
