@@ -2,6 +2,7 @@ package com.glosys.lms.web.student;
 
 import com.glosys.lms.CourseCategory;
 import com.glosys.lms.TrainingProgramType;
+import com.glosys.lms.TrainingProgramTypeEnum;
 import com.glosys.lms.controller.CourseCategoryController;
 import com.glosys.lms.controller.TrainingProgramTypeController;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/secure/trainingProgram")
@@ -22,13 +24,12 @@ public class TrainingProgramServlet extends HttpServlet {
         TrainingProgramTypeController trainingProgramTypeController = new TrainingProgramTypeController();
         CourseCategoryController courseCategoryController = new CourseCategoryController();
 
-        List<TrainingProgramType> programTypes = trainingProgramTypeController.getTrainingProgramTypes();
+        List<TrainingProgramTypeEnum> programTypes = Arrays.asList(TrainingProgramTypeEnum.values());
         List<CourseCategory> courseCategories = courseCategoryController.getCourseCategories();
 
         request.setAttribute("trainingProgramTypes", programTypes);
         request.setAttribute("courseCategories", courseCategories);
 
-        request.getRequestDispatcher("/secure/training.jsp").forward(request, response);
         request.getRequestDispatcher("/secure/training.jsp").forward(request, response);
 
     }

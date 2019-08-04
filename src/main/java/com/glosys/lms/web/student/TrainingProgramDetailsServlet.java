@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-import static com.glosys.lms.web.student.TrainingProgram.*;
+import static com.glosys.lms.TrainingProgramTypeEnum.getTrainingProgram;
+
 
 @WebServlet("/secure/trainingProgramDetails")
 public class TrainingProgramDetailsServlet extends HttpServlet {
