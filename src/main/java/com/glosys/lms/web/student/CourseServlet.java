@@ -1,7 +1,8 @@
 package com.glosys.lms.web.student;
 
-import com.glosys.lms.Course;
+
 import com.glosys.lms.controller.CourseController;
+import com.glosys.lms.entity.Course;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

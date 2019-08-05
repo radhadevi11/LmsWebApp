@@ -1,6 +1,5 @@
 package com.glosys.lms.web.student;
 
-import com.glosys.lms.WorkshopType;
 import com.glosys.lms.controller.CorporateTrainingController;
 import com.glosys.lms.controller.InplantTrainingController;
 import com.glosys.lms.controller.ResearchTrainingController;
@@ -16,9 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-import static com.glosys.lms.TrainingProgramTypeEnum.getTrainingProgram;
+import static com.glosys.lms.entity.TrainingProgramTypeEnum.getTrainingProgram;
 
 
 @WebServlet("/secure/trainingProgramDetails")

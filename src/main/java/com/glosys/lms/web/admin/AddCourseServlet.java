@@ -1,10 +1,11 @@
 package com.glosys.lms.web.admin;
 
-import com.glosys.lms.Course;
-import com.glosys.lms.CourseCategory;
+
 import com.glosys.lms.controller.CourseCategoryController;
 import com.glosys.lms.controller.CourseController;
 import com.glosys.lms.dao.CourseDao;
+import com.glosys.lms.entity.Course;
+import com.glosys.lms.entity.CourseCategory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

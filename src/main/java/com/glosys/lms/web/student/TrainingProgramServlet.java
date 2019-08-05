@@ -1,12 +1,11 @@
 package com.glosys.lms.web.student;
 
-import com.glosys.lms.CourseCategory;
-import com.glosys.lms.TrainingProgramType;
-import com.glosys.lms.TrainingProgramTypeEnum;
+
 import com.glosys.lms.controller.CourseCategoryController;
 import com.glosys.lms.controller.TrainingProgramTypeController;
+import com.glosys.lms.entity.CourseCategory;
+import com.glosys.lms.entity.TrainingProgramTypeEnum;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

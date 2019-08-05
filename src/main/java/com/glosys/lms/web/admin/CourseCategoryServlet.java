@@ -1,7 +1,8 @@
 package com.glosys.lms.web.admin;
 
-import com.glosys.lms.CourseCategory;
+
 import com.glosys.lms.controller.CourseCategoryController;
+import com.glosys.lms.entity.CourseCategory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebFilter;

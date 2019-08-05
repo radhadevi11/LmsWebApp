@@ -1,8 +1,7 @@
 package com.glosys.lms.web.student;
 
-
-import com.glosys.lms.Student;
 import com.glosys.lms.controller.StudentController;
+import com.glosys.lms.entity.Student;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
