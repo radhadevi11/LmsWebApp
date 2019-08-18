@@ -15,7 +15,7 @@ public class DeleteCourseServlet extends HttpServlet {
         Integer id = Integer.parseInt(request.getParameter("id"));
         CourseController courseController = new CourseController();
         courseController.deleteCourse(id);
-        response.sendRedirect(request.getContextPath());
+        response.sendRedirect(request.getContextPath()+"/secureadmin/adminpage.jsp");
 
     }
 }

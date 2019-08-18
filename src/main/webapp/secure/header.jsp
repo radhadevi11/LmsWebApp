@@ -42,29 +42,31 @@
     <div class="topnav">
 
     <c:choose>
-        <c:when test="${session != null && adminName != null}">
+        <c:when test="${sessionScope.adminName != null}">
              <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
              </a>
-             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${adminName}"</a>
-             <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
+             <a style=margin-right:100px>
+             </a>
+             <a href="index.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
+             <a href="admin.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
-        <c:when test="${session != null && email != null}">
+        <c:when test="${sessionScope.student != null}">
                      <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
                      <a style=margin-right:265px>
                      </a>
-                     <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${email}"</a>
-                     <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
+                     <a href="index.jsp"><img src="userLogo.png" width="40" height="40"><br>${student.firstName}</a>
+                     <a href="login.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
         <c:otherwise>
             <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
-                 <a href="login.html" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
+                 <a href="login.jsp" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
               </a>
              <a href="signup.html"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
-             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
+             <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
          </c:otherwise>
     </c:choose>
 

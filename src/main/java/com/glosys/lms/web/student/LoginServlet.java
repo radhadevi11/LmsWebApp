@@ -1,6 +1,7 @@
 package com.glosys.lms.web.student;
 
 import com.glosys.lms.controller.LoginController;
+import com.glosys.lms.entity.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,16 +25,18 @@ public class LoginServlet extends HttpServlet {
         if(loginController == null) {
             loginController = new LoginController();
         }
-        boolean validUser = loginController.isValidUser(mailId, password);
+       Student student = loginController.getValidUser(mailId, password);
 
-        if(validUser){
-            HttpSession session = request.getSession(true);
-            session.setAttribute("email",mailId);
-            response.sendRedirect(request.getContextPath()+"/secure/trainingProgram");
+        if(student == null){
+            response.sendRedirect(request.getContextPath()+"/login.jsp");
+
 
         }
         else {
-            response.sendRedirect(request.getContextPath()+"/login.html");
+            HttpSession session = request.getSession(true);
+            session.setAttribute("student",student);
+            response.sendRedirect(request.getContextPath()+"/secure/trainingProgram");
+
         }
 
 

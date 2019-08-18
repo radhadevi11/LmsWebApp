@@ -1,6 +1,6 @@
 ``<%@ page import="javax.servlet.*,javax.servlet.http.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="com.glosys.lms.controller.TrainingProgramTypeController,com.glosys.lms.TrainingProgramType,java.util.List" %>
+<%@ page import="java.util.List" %>
 <html>
  <head>
         <style>
@@ -33,9 +33,10 @@
         </style>
       </head>
 <body>
+<div>
+<%@ include file="header.jsp" %>
+</div>
 <h1><center>Training Details</center></h1>
-
-<h3>Welcome <%= session.getAttribute("email") %></h3>
 <table id="training">
 <tr><th>Training Programs Offered</th></tr>
 <c:forEach var="program" items="${trainingProgramTypes}">

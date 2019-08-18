@@ -46,7 +46,9 @@
              <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
              </a>
-             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${adminName}"</a>
+             <a style=margin-right:100px>
+             </a>
+             <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
              <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
@@ -54,17 +56,17 @@
                      <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
                      <a style=margin-right:265px>
                      </a>
-                     <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>"${email}"</a>
+                     <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${email}</a>
                      <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
         <c:otherwise>
             <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
-                 <a href="login.html" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
+                 <a href="login.jsp" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
               </a>
              <a href="signup.html"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
-             <a href="admin.html"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
+             <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
          </c:otherwise>
     </c:choose>
 

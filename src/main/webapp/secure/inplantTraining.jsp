@@ -29,6 +29,9 @@
         </style>
       </head>
 <body>
+<div>
+<%@ include file="header.jsp" %>
+</div>
 <h1><center>Inplant Training Info</center></h1>
 
 <table id="inplant">

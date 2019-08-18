@@ -1,9 +1,7 @@
 package com.glosys.lms.web.student;
 
-import com.glosys.lms.controller.CorporateTrainingController;
-import com.glosys.lms.controller.InplantTrainingController;
-import com.glosys.lms.controller.ResearchTrainingController;
-import com.glosys.lms.controller.WorkshopController;
+import com.glosys.lms.controller.*;
+import com.glosys.lms.entity.Workshop;
 import com.glosys.lms.model.CorporateTrainingInfo;
 import com.glosys.lms.model.InplantTrainingInfo;
 import com.glosys.lms.model.ResearchTrainingInfo;
@@ -15,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 import static com.glosys.lms.entity.TrainingProgramTypeEnum.getTrainingProgram;
 
@@ -28,8 +27,8 @@ public class TrainingProgramDetailsServlet extends HttpServlet {
         switch (getTrainingProgram(trainingProgramTypeId)){
 
             case WORKSHOP:
-                WorkshopController workshopController = new WorkshopController();
-                WorkshopInfo workshopInfo = workshopController.getWorkshopInfo();
+                WorkshopTypeController WorkshopTypeController = new WorkshopTypeController();
+                WorkshopInfo workshopInfo = WorkshopTypeController.getWorkshopInfo();
                 request.setAttribute("workshopInfo", workshopInfo);
                 request.getRequestDispatcher("/secure/workshop.jsp").forward(request,response);
                 break;

@@ -30,7 +30,7 @@ public class UpdateCourseServlet extends HttpServlet {
                 workshopEligibility, researchTrainingEligibility, inplantTrainingEligibility, corporateTrainingEligibility);
         CourseController courseController = new CourseController();
         courseController.updateCourseByCourseId(course);
-        response.sendRedirect(request.getContextPath());
+        response.sendRedirect(request.getContextPath()+"/secureadmin/adminpage.jsp");
 
 
 

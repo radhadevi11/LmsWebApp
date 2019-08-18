@@ -20,7 +20,7 @@ public class AdminFilter implements Filter {
 
         if(session == null || session.getAttribute("adminName") == null){
             ((HttpServletResponse)servletResponse).sendRedirect(((HttpServletRequest) servletRequest).
-                    getContextPath()+"/admin.html");
+                    getContextPath()+"/admin.jsp");
         }
         else {
             filterChain.doFilter(servletRequest, servletResponse);

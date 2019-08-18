@@ -1,42 +1,24 @@
 <%@ page import="javax.servlet.*,javax.servlet.http.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
- <style>
-
-             #workshop {
-                    border: 2px solid black;
-                    padding: 3px;
-                    border-collapse: collapse;
-                    width: 100%;
-                }
-
-                #workshop td, #workshop th {
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
-
-                #workshop tr:nth-child(even){background-color: #f2f2f2;}
-
-                #workshop tr:hover {background-color: #ddd;}
-
-                #workshop th {
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    text-align: left;
-                    background-color: #4CAF50;
-                    color: white;
-                }
-        </style>
+ <head>
+ <link rel="stylesheet" type="text/css" href="workshopPageStyle.css">
       </head>
 <body>
-
-
-<h3>Welcome <%= session.getAttribute("email") %></h3>
+<div>
+<%@ include file="header.jsp" %>
+</div>
+<br>
+<br>
+<a href="#types">TYPES</a><br>
+<a href="#courses">COURSES AVAILABLE FOR WORKSHOP</a><br>
+<a href="#enrol">ENROLLMENT OPTIONS</a>
+<div id="types">
 <h1><center>Workshops Info</center></h1>
 <table id="workshop">
     <tr>
         <th>modeOfTraining</th>
-        <th>noOfWorkshops</th>
+        <th>noOfCoursesForWorkshop</th>
         <th>totalDays</th>
         <th>totalHours</th>
         <th>hoursPerDay</th>
@@ -55,6 +37,8 @@
     </tr>
 </c:forEach>
 </table><br>
+</div>
+<div id="courses">
 <h3><center>List of courses</center></h3>
 <table id="workshop">
 <h3><center><tr><th>CourseName</th></tr></center></h3>
@@ -62,5 +46,25 @@
     <tr><td>${courseForWorkshop.name}</td></tr>
 </c:forEach>
 </table>
+</div>
+<div id="enrol">
+  <form action="workshopEnrollment" method="POST">
+  <h2><center><u>ENROL HERE</u></center></h2>
+    <lable>Choose Your Course</lable>
+    <select name="courseId">
+    <c:forEach var="courseForWorkshop" items="${workshopInfo.courses}">
+    <option value="${courseForWorkshop.id}">${courseForWorkshop.name}</option>
+    </c:forEach>
+    </select>
+    <br><br>
+
+    <label>Choose Workshop Type</label><br>
+   <c:forEach var="workshopType" items="${workshopInfo.workshopTypes}">
+    <input type="checkbox" name="workshopTypeId" value="${workshopType.id}"><a href="#types">${workshopType.totalDays} Days Workshop</a><br>
+    </c:forEach>
+    <br>
+    <button type="submit" value="submit">ENROL
+  </form>
+</div>
 </body>
 </html>

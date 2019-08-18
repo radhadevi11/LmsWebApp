@@ -81,6 +81,9 @@
         </style>
 </head>
 <body>
+<div>
+<%@ include file="header.jsp" %>
+</div>
 <div class="log">
     <form name="loginform" action="/lmsweb/admin" method="POST">
         <h2><font face="Comic Sans MS">LOGIN</font></h2>

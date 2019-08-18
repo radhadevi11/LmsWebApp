@@ -29,7 +29,10 @@
         </style>
       </head>
 <body>
-<h1><center>research Training Info</center></h1>
+<div>
+<%@ include file="header.jsp" %>
+</div>
+<h1><center>Research Training Info</center></h1>
 <table id="research">
  <tr>
 

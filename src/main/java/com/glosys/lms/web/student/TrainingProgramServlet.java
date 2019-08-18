@@ -2,7 +2,6 @@ package com.glosys.lms.web.student;
 
 
 import com.glosys.lms.controller.CourseCategoryController;
-import com.glosys.lms.controller.TrainingProgramTypeController;
 import com.glosys.lms.entity.CourseCategory;
 import com.glosys.lms.entity.TrainingProgramTypeEnum;
 
@@ -20,7 +19,7 @@ import java.util.List;
 public class TrainingProgramServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        TrainingProgramTypeController trainingProgramTypeController = new TrainingProgramTypeController();
+
         CourseCategoryController courseCategoryController = new CourseCategoryController();
 
         List<TrainingProgramTypeEnum> programTypes = Arrays.asList(TrainingProgramTypeEnum.values());

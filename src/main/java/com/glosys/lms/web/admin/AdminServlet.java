@@ -28,7 +28,7 @@ public class AdminServlet extends HttpServlet {
 
         }
         else{
-            response.sendRedirect(request.getContextPath()+"/admin.html");
+            response.sendRedirect(request.getContextPath()+"/admin.jsp");
         }
     }
 }

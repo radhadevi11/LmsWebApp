@@ -81,13 +81,18 @@
         </style>
 	</head>
     <body>
+   <div>
+   <%@ include file="header.jsp" %>
+   </div>
+
 	<div class="log">
 	<form name="loginform" action="/lmsweb/login" method="POST">
         <h2><font face="Comic Sans MS">LOGIN</font></h2>
 	
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button><a href="signup.html"><img src="s.png" style="height:50px""width:100px"><font face="Comic Sans MS">Register </font></a></button><br>
         
-      &nbsp; <img src="email.png"style="height: 30px" "width:20px">
+      &nbsp; <img src="email
+      .png"style="height: 30px" "width:20px">
 	<input type="email" name="email" placeholder="E-mail" autocomplete="off"><br>
 	<img src="pass.png"style="height: 30px" "width:20px"> 
 	<input type="password" name="password" placeholder="Password">

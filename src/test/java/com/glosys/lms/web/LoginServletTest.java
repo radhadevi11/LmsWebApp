@@ -1,6 +1,7 @@
 package com.glosys.lms.web;
 
 import com.glosys.lms.controller.LoginController;
+import com.glosys.lms.entity.Student;
 import com.glosys.lms.web.student.LoginServlet;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -37,6 +38,7 @@ public class LoginServletTest {
 
     private final String eMail = "shalu@gmail.com";
     private final String psw = "123";
+    private Student student = mock(Student.class);
     private final String contextPath = "localhost:8080/lmsweb";
 
 
@@ -53,7 +55,7 @@ public class LoginServletTest {
 
         doReturn(eMail).when(request).getParameter("email");
         doReturn(psw).when(request).getParameter("password");
-        doReturn(true).when(loginController).isValidUser(eMail, psw);
+        doReturn(student).when(loginController).getValidUser(eMail, psw);
         doReturn(session).when(request).getSession(true);
         doNothing().when(session).setAttribute("email",eMail);
         doNothing().when(response).sendRedirect(contextPath+"/secure/trainingProgram");
@@ -62,7 +64,7 @@ public class LoginServletTest {
 
         verify(request).getParameter("email");
         verify(request).getParameter("password");
-        verify(loginController).isValidUser(eMail, psw);
+        verify(loginController).getValidUser(eMail, psw);
         verify(request).getSession(true);
         verify(session).setAttribute("email", eMail);
         verify(request).getContextPath();
