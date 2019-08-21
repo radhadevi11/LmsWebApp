@@ -22,8 +22,8 @@ public class WorkshopEnrollment extends HttpServlet {
         HttpSession session = request.getSession(false);
         Student student = (Student) session.getAttribute("student");
         WorkshopEnrolmentController workshopEnrolmentController = new WorkshopEnrolmentController();
-        workshopEnrolmentController.saveWorkshopEnrolment(new WorkshopEnrolment(new Student(student.getId()),
-                new WorkshopType(workshopTypeId), new Course(courseId)));
+       // workshopEnrolmentController.saveWorkshopEnrolment(new WorkshopEnrolment(new Student(student.getId()),
+                //new WorkshopType(workshopTypeId), new Course(courseId)));
 
     }
 }

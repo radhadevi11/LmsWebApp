@@ -34,10 +34,11 @@
 <%@ include file="header.jsp" %>
 </div>
 
-<div class="topnav">
+
     <form name = "modifyCourse">
         <Button type="submit" value="addCourse" onclick="form.action='adminpage'; form.method='post'; ">Add Course</Button>
-        <Button type="submit" value="editCourse" onclick="form.action='listOfCourse'; form.method='post'; ">Edit Course</Button>
-</div>
+        <Button type="submit" value="customizeCourse" onclick="form.action='listOfCourse'; form.method='post'; ">Customize Course</Button>
+        <Button type="submit" value="scheduleTrainingPrograms" onclick="form.action='trainingProgram'; form.method='get';">
+        Scedule Training Program</Button>
 </body>
 </html>
