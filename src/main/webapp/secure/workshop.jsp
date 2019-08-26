@@ -12,7 +12,7 @@
 <br>
 <a href="#types">TYPES</a><br>
 <a href="#courses">COURSES AVAILABLE FOR WORKSHOP</a><br>
-<a href="#enrol">ENROLLMENT OPTIONS</a>
+<a href="availableWorkshops">ENROLLMENT OPTIONS</a>
 <div id="types">
 <h1><center>Workshops Info</center></h1>
 <table id="workshop">
@@ -46,25 +46,6 @@
     <tr><td>${courseForWorkshop.name}</td></tr>
 </c:forEach>
 </table>
-</div>
-<div id="enrol">
-  <form action="workshopEnrollment" method="POST">
-  <h2><center><u>ENROL HERE</u></center></h2>
-    <lable>Choose Your Course</lable>
-    <select name="courseId">
-    <c:forEach var="courseForWorkshop" items="${workshopInfo.courses}">
-    <option value="${courseForWorkshop.id}">${courseForWorkshop.name}</option>
-    </c:forEach>
-    </select>
-    <br><br>
-
-    <label>Choose Workshop Type</label><br>
-   <c:forEach var="workshopType" items="${workshopInfo.workshopTypes}">
-    <input type="checkbox" name="workshopTypeId" value="${workshopType.id}"><a href="#types">${workshopType.totalDays} Days Workshop</a><br>
-    </c:forEach>
-    <br>
-    <button type="submit" value="submit">ENROL
-  </form>
 </div>
 </body>
 </html>

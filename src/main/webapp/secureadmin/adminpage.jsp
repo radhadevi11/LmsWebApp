@@ -39,6 +39,6 @@
         <Button type="submit" value="addCourse" onclick="form.action='adminpage'; form.method='post'; ">Add Course</Button>
         <Button type="submit" value="customizeCourse" onclick="form.action='listOfCourse'; form.method='post'; ">Customize Course</Button>
         <Button type="submit" value="scheduleTrainingPrograms" onclick="form.action='trainingProgram'; form.method='get';">
-        Scedule Training Program</Button>
+        Schedule Training Program</Button>
 </body>
 </html>

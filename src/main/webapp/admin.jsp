@@ -3,81 +3,37 @@
     <title>login form
     </title>
     <style>
-	body
-	{
-	background:white;
-	background:white;
-	}
-	.log
-	{
-    height:470px;
-	width:350px;
-    margin:auto;
-	background-image:url("login.gif");
-	margin-top:100px;
-	padding:0px;
-	}
-	form
-	{
-	padding:20px;
-	font-family:arial;
-    border-style: inset;
-    border-color:lightskyblue;
-    height:450px;
-	border-radius:5px;
-	margin:10px;
-	}
-	h2
-	{
-	text-align:center;
-	background: dodgerblue;
-    color:white;
-	padding:5px;
-	border-radius:10px;
-	}
-	input
-	{
-	padding:10px;
-	margin:5px;
-	border-radius:5px;
-    background: transparent;
-    font-weight: bold;
-    font-size:12px;
+
+input[type=text],[type=password],[type=email],select {
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 
-    font-style:Comic Sans MS;
+button[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-	border-style: double red;
-	}
-	input[type=email],input[type=password]
-	{
-	width:95%;
-	}
-	button
-	{
-	width:20%;
-	background: transparent;
-
-    border: none;
-
-	cursor:pointer;
-
-
-	}
-        button[name="login"]:hover
-	{
-	background-color:#80FF00;
-    border: none;
-    border-radius:60%;
-
-	}
-	/*button
-	{
-	padding:0px;
-	wi
-	border-radius:5px;
-	}*/
-
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
         </style>
 </head>
 <body>
@@ -86,18 +42,15 @@
 </div>
 <div class="log">
     <form name="loginform" action="/lmsweb/admin" method="POST">
-        <h2><font face="Comic Sans MS">LOGIN</font></h2>
-
-
-
-        &nbsp; <img src="user-image.png"style="height: 30px" "width:20px"><br>
+        <center><h2><font face="Comic Sans MS">LOGIN</font></h2></center>
+        &nbsp; <img src="user-image.png"style="height: 30px" "width:20px">
         <input type=text name="adminName" placeholder="Admin Name" autocomplete="off"><br>
-        <img src="pass.png"style="height: 30px" "width:20px">
+         &nbsp;<img src="pass.png"style="height: 30px" "width:20px">
         <input type="password" name="password" placeholder="Password">
 
         <br><br><br>
 
-        <center><button name="login" style="height:45px" "width:10px" > <img src="p1.png" style="height: 45px""width: 60px"><b><font face="Comic Sans MS">LOGIN</font></b></button></center>
+        <center><button type="submit" name="login" >LOGIN</button></center>
 
     </form>
 </div>
