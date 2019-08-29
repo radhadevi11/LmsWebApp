@@ -26,10 +26,7 @@ public class SaveEnrolmentServlet extends HttpServlet {
         workshopEnrolmentController.saveWorkshopEnrolment(new WorkshopEnrolment(new Student(student.getId()),
                 new Workshop(workshopId)));
 
-        WorkshopController workshopController = new WorkshopController();
-        List<Workshop> availableWorkshopsForStudent = workshopController.getFutureWorkshops();
-        request.setAttribute("availableWorkshopsForStudent", availableWorkshopsForStudent);
-        request.getRequestDispatcher("/secure/availableWorkshops.jsp").forward(request, response);
+       response.sendRedirect("/secure/workshopEnrolments");
 
     }
 }
