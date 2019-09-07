@@ -33,6 +33,8 @@
 <div>
 <%@ include file="header.jsp" %>
 </div>
+<%@ include file="adminHeader.jsp" %>
+</div>
 
 
     <form name = "modifyCourse">

@@ -17,7 +17,8 @@ import java.util.List;
 
 @WebServlet("/secure/saveEnrolment")
 public class SaveEnrolmentServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         WorkshopEnrolmentController workshopEnrolmentController = new WorkshopEnrolmentController();
         int workshopId = Integer.parseInt(request.getParameter("workshopId"));
         HttpSession session = request.getSession(false);
@@ -26,7 +27,7 @@ public class SaveEnrolmentServlet extends HttpServlet {
         workshopEnrolmentController.saveWorkshopEnrolment(new WorkshopEnrolment(new Student(student.getId()),
                 new Workshop(workshopId)));
 
-       response.sendRedirect("/secure/workshopEnrolments");
+       response.sendRedirect(request.getContextPath()+"/secure/workshopEnrolments");
 
     }
 }

@@ -51,8 +51,6 @@ Gender:<input type="radio" name="Gender" value="male">Male
 <br>
 <br>
 <input type="email" name="email" autocomplete="off" placeholder="E-mail"><br>
-<input type="text" name="pnumber" placeholder="Phone Number"><br>
-
 <input type="text" name="collegeName" placeholder="College Name"><br>
 <input type="password" name="password" placeholder="Password"> <br>
 <input type="password" name="psw-repeat" placeholder="Re-Enter password"><br>

@@ -8,8 +8,9 @@
     <div>
         <%@ include file="header.jsp" %>
     </div>
-    <h1><center><%=session.getAttribute("student").name>'s Enrolment</center></h1>
-    <form >
+
+    <h1><center>Enrolments</center></h1>
+    <form action="payment.jsp">
         <c:choose>
             <c:when test="${isEmptyEnrolment}">
                 <center> <h2> "NO ENROLMENTS YET"</h2></center>
@@ -41,3 +42,5 @@
         </c:choose>
 </form>
 </div>
+</body>
+</html>

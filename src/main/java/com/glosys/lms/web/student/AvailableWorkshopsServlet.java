@@ -29,6 +29,7 @@ public class AvailableWorkshopsServlet extends HttpServlet {
         }
         else {
             request.setAttribute("isEmptyWorkshop", false);
+            System.out.println("size of enrolments "+availableWorkshopsForStudent.size());
             request.setAttribute("availableWorkshopsForStudent", availableWorkshopsForStudent);
             request.getRequestDispatcher("/secure/availableWorkshops.jsp").forward(request, response);
         }

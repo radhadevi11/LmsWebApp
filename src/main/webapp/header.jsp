@@ -47,7 +47,7 @@
              <a style=margin-right:265px>
              </a>
              <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
-             <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
+             <a href="signup.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
         <c:when test="${sessionScope.email != null}">
@@ -55,7 +55,7 @@
                      <a style=margin-right:265px>
                      </a>
                      <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${email}</a>
-                     <a href="signup.html"><img src="logout.png" width="40" height="40"><br>Logout</a>
+                     <a href="signup.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
         <c:otherwise>
@@ -63,7 +63,7 @@
              <a style=margin-right:265px>
                  <a href="login.jsp" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
               </a>
-             <a href="signup.html"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
+             <a href="signup.jsp"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
              <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
          </c:otherwise>
     </c:choose>

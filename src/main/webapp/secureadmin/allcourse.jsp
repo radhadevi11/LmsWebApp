@@ -37,6 +37,8 @@
                 <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
                 </tr>
                 <c:forEach var="course" items="${courses}">
                     <tr>
