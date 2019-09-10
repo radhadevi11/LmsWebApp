@@ -50,7 +50,7 @@ body {
   border-radius: 3px;
 }
 
-input[type=text] {
+input[type=text],select {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -117,11 +117,17 @@ span.price {
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form >
+      <form action="savePayment" method="post">
+            <label for="courseName">CourseName</label>
+            <input type="text" name="courseName" value="${courseName}" readonly>
+            <label for="cost">Cost</label>
+            <input type="text" name="cost" value="${cost}" readonly>
             <label for="cardname">Card Holder Name</label>
             <input type="text"  name="cardHolderName" placeholder="James Matthew">
             <label for="cardnumber">Credit card number</label>
-            <input type="text" id="cardNumber" name="cardnumber" placeholder="1111 2222 3333 4444" maxlength = "16">
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1111 2222 3333 4444" maxlength = "16">
+            <label for="cardType">Card Type</label>
+            <input type="text" name="cardType" placeholder="Visa">
             <label for="expmonth">Expiration Month</label>
             <select name="month" placeholder="month">
                         <option value="JANUARY">January</option>
@@ -151,7 +157,7 @@ span.price {
           
         </div>
         
-        <input type="button" value="Proceed To Pay" class="btn">
+        <button type="submit" value="Proceed To Pay" class="btn">
       </form>
     </div>
   </div>

@@ -3,6 +3,7 @@ package com.glosys.lms.web.admin;
 import com.glosys.lms.controller.WorkshopController;
 import com.glosys.lms.controller.WorkshopTypeController;
 import com.glosys.lms.entity.Course;
+import com.glosys.lms.entity.Trainer;
 import com.glosys.lms.entity.Workshop;
 import com.glosys.lms.entity.WorkshopType;
 import com.glosys.lms.model.WorkshopInfo;
@@ -27,7 +28,7 @@ public class SaveWorkshopServlet extends HttpServlet {
         int year = Integer.parseInt(request.getParameter("year"));
         LocalDate workshopDate = LocalDate.of(year, Month.valueOf(month), date);
         Workshop workshop = new Workshop(new WorkshopType(workshopTypeId), new Course(courseId),
-                workshopDate);
+                workshopDate,new Trainer());
 
         WorkshopController workshopController = new WorkshopController();
         if(workshopController.isExistingWorkshop(workshopTypeId, courseId, workshopDate)) {

@@ -10,7 +10,7 @@
     </div>
 
     <h1><center>Enrolments</center></h1>
-    <form action="payment.jsp">
+
         <c:choose>
             <c:when test="${isEmptyEnrolment}">
                 <center> <h2> "NO ENROLMENTS YET"</h2></center>
@@ -27,7 +27,10 @@
                         <th>Enroll</th>
                     </tr>
                 <c:forEach var="workshopEnrolment" items="${workshopEnrolments}">
+                <form action="payNow">
                     <tr>
+                    <input type="hidden" name="courseName" value="${workshopEnrolment.workshop.course.name}">
+                    <input type="hidden" name="cost" value="${workshopEnrolment.workshop.workshopType.cost}">
                     <td>${workshopEnrolment.workshop.course.name}</td>
                     <td>${workshopEnrolment.workshop.date}</td>
                     <td> ${workshopEnrolment.workshop.workshopType.totalDays}</td>
@@ -36,11 +39,12 @@
                     <td>${workshopEnrolment.workshop.workshopType.cost}</td>
                     <td><button type="submit">PAY NOW</button> </td>
                     </tr>
+                    </form>
                 </c:forEach>
                 </table><br>
             </c:otherwise>
         </c:choose>
-</form>
+
 </div>
 </body>
 </html>
