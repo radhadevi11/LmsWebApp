@@ -31,7 +31,7 @@ public class TrainingProgramDetailsServlet extends HttpServlet {
                 WorkshopTypeController WorkshopTypeController = new WorkshopTypeController();
                 WorkshopInfo workshopInfo = WorkshopTypeController.getWorkshopInfo();
                 request.setAttribute("workshopInfo", workshopInfo);
-                request.getRequestDispatcher("/secureadmin/scheduleWorkshop.jsp").forward(request,response);
+                request.getRequestDispatcher("/secureadmin/trainers").forward(request,response);
                 break;
 
             case INPLANT_TRAINING:

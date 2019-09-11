@@ -1,5 +1,6 @@
 package com.glosys.lms.web.admin;
 
+import com.glosys.lms.controller.TrainerController;
 import com.glosys.lms.controller.WorkshopController;
 import com.glosys.lms.controller.WorkshopTypeController;
 import com.glosys.lms.entity.Course;
@@ -17,23 +18,30 @@ import javax.servlet.http.HttpServletResponse;
 ;import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @WebServlet("/secureadmin/saveWorkshop")
 public class SaveWorkshopServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int workshopTypeId = Integer.parseInt(request.getParameter("workshopTypeId"));
         int courseId = Integer.parseInt(request.getParameter("courseId"));
-        String month = request.getParameter("month");
-        int date = Integer.parseInt(request.getParameter("date"));
-        int year = Integer.parseInt(request.getParameter("year"));
-        LocalDate workshopDate = LocalDate.of(year, Month.valueOf(month), date);
+        int trainerId = Integer.parseInt(request.getParameter("trainerId"));
+        String date = request.getParameter("date");
+        String replacedDate = date.replace("-", " ");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+        LocalDate parsedDate = LocalDate.parse(replacedDate, formatter);
+
         Workshop workshop = new Workshop(new WorkshopType(workshopTypeId), new Course(courseId),
-                workshopDate,new Trainer());
+                parsedDate,new Trainer(trainerId));
 
         WorkshopController workshopController = new WorkshopController();
-        if(workshopController.isExistingWorkshop(workshopTypeId, courseId, workshopDate)) {
+        if(workshopController.isExistingWorkshop(workshopTypeId, courseId, parsedDate)) {
             WorkshopTypeController workshopTypeController = new WorkshopTypeController();
             WorkshopInfo workshopInfo = workshopTypeController.getWorkshopInfo();
+            TrainerController trainerController = new TrainerController();
+            List<Trainer> trainers = trainerController.getAllTrainers();
+            request.setAttribute("trainers", trainers);
             request.setAttribute("workshopInfo", workshopInfo);
             request.setAttribute("workshop", workshop);
             request.setAttribute("isExistingWorkshop", true);
