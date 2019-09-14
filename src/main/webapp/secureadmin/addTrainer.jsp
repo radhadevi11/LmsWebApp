@@ -14,14 +14,13 @@
 <label for="lastName">Last name</label><br>
 <input type="text" name="lastName" placeholder="Last name" ><br>
 <br>
-<label for="gender">Gender</label><br>
+<label for="gender">Gender</label><br><br>
 <input type="radio" name="Gender" value="male">Male
-        <input type="radio" name="Gender" value="female">Female
-<br>
-<label for="knownCourses">KnownCourses</label><br>
-<textarea name="knownCourses" rows="10" cols="50" placeholder="KnownCourses"><br>
-</textarea>
-<label for="UserName">UserName</label><br>
+<input type="radio" name="Gender" value="female">Female<br>
+<br><label for="knownCourses">KnownCourses</label><br><br>
+<textarea name="knownCourses" rows="10" cols="50" placeholder="KnownCourses">
+</textarea><br>
+<br><label for="UserName">UserName</label><br>
 <input type="text" name="userName" placeholder="UserName"><br>
 <label for="password">Password</label><br>
 <input type="password" name="password" placeholder="Password"> <br>

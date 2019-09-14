@@ -5,11 +5,23 @@
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-          $( function() {
-            $( "#datepicker" ).datepicker({dateFormat:'dd-mm-yy', minDate:0});
-          } );
-        </script>
+       <script>
+        function populateTrainerDropDown(){
+                       var trainers=getAvailableTrainers();
+                       var dropDownString = "<select name=\"trainerId\">";
+                       for(var i=0;i<trainers.length;i++){
+                           dropDownString+= "<option value=\""+trainers[i].id+"\">"+trainers[i].firstName+"</option>";
+                       }
+                       dropDownString+="</select>";
+                       document.getElementById("dropDown").innerHTML=dropDownString;
+                   }
+         $( function() {
+           $( "#datepicker" ).datepicker({dateFormat:'dd-mm-yy', minDate:0,onSelect:populateTrainerDropDown });
+         } );
+         </script>
+        <script src="Trainer.js"></script>
+        <script src="service.js"></script>
+
         <link rel="stylesheet" type="text/css" href="workshopPageStyle.css">
         <style>
         p{
@@ -52,11 +64,8 @@
                 <br>
 
                 <lable>Choose  Trainer</lable><br>
-                <select name="trainerId">
-                <c:forEach var="trainer" items="${trainers}">
-                <option value="${trainer.id}" ${workshop==null?"":(trainer.id==workshop.trainer.id?"selected":"")}>
-                ${trainer.firstName}</option>
-                </c:forEach>
+
+                <div id="dropDown"></div>
                 </select>
                 <br><br>
 
@@ -66,3 +75,16 @@
         </div>
 </body>
 </html>
+
+<!--
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").options.length;
+  document.getElementById("demo").innerHTML = "Found " + x + " options in the list.";
+  var option = document.createElement("OPTION");
+  option.text="Mango";
+  option.value="mango";
+  document.getElementById("mySelect").options.add(option);
+}
+</script>
+-->
