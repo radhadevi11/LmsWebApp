@@ -6,7 +6,7 @@
       </head>
  <body>
     <div>
-        <%@ include file="header.jsp" %>
+        <%@ include file="../header.jsp" %>
     </div>
     <h1><center>Available Workshops For Enrolment</center></h1>
     <form action="saveEnrolment" method="POST">

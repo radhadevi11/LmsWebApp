@@ -111,7 +111,7 @@ span.price {
 </head>
 <body>
 <div>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 </div>
 <center><h2>Payment</h2></center>
 <div class="row">

@@ -41,10 +41,10 @@ form {
 <%@ include file="header.jsp" %>
 </div>
 <div class="log">
-    <form name="loginform" action="/lmsweb/admin" >
+    <form name="loginform" action="/lmsweb/trainerLogin" method="GET">
         <center><h2><font face="Comic Sans MS">LOGIN</font></h2></center>
         &nbsp; <img src="user-image.png"style="height: 30px" "width:20px">
-        <input type=text name="adminName" placeholder="Admin Name" autocomplete="off"><br>
+        <input type=text name="userName" placeholder="user Name" autocomplete="off"><br>
          &nbsp;<img src="pass.png"style="height: 30px" "width:20px">
         <input type="password" name="password" placeholder="Password">
 

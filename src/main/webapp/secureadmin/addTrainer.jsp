@@ -4,7 +4,7 @@
 </head>
 <body>
 <div>
-    <%@ include file="header.jsp" %>
+    <%@ include file="../header.jsp" %>
 </div>
 
 <form action="saveTrainer" method="post">

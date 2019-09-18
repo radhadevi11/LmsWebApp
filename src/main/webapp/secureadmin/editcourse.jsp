@@ -6,7 +6,7 @@
       </head>
 <body>
 <div>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 </div>
 <div class="wrap">
 <form action="updateCourse" method="POST">

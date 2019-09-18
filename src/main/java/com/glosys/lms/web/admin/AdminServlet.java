@@ -13,7 +13,7 @@ import java.io.IOException;
 @WebServlet("/admin")
 
 public class AdminServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         AdminController adminController = new AdminController();
         String adminName = request.getParameter("adminName");
         String password = request.getParameter("password");

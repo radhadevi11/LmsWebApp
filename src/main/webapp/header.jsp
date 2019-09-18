@@ -43,28 +43,39 @@
 
     <c:choose>
         <c:when test="${sessionScope.adminName != null}">
-             <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
+             <a href="/lmsweb/index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
              </a>
-             <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
-             <a href="signup.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+             <a style=margin-right:100px>
+             </a>
+             <a href="index.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
+             <a href="admin.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
-        <c:when test="${sessionScope.email != null}">
-                     <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
+        <c:when test="${sessionScope.student != null}">
+                     <a href="/lmsweb/index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
                      <a style=margin-right:265px>
                      </a>
-                     <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>${email}</a>
-                     <a href="signup.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+                     <a href="index.jsp"><img src="userLogo.png" width="40" height="40"><br>${student.firstName}</a>
+                     <a href="login.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
-        <c:otherwise>
-            <a href="index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
+        <c:when test="${sessionScope.trainer != null}">
+             <a href="/lmsweb/index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
              <a style=margin-right:265px>
+             </a>
+             <a href="index.jsp"><img src="trainerlogo2.png" width="40" height="40"><br>${trainer.firstName}</a>
+             <a href="login.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+
+        </c:when>
+        <c:otherwise>
+            <a href="/lmsweb/index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
+             <a style=margin-right:100px>
                  <a href="login.jsp" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
               </a>
              <a href="signup.jsp"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
              <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
+             <a href="trainerLogin.jsp"><img src="trainerlogo2.png" width="45" height="45"><br>Trainer</a>
          </c:otherwise>
     </c:choose>
 

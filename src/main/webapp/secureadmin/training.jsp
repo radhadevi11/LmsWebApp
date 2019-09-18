@@ -34,7 +34,7 @@
       </head>
 <body>
 <div>
-<%@ include file="header.jsp" %>
+<%@ include file="../header.jsp" %>
 </div>
 <h1><center>Training Details</center></h1>
 <table id="training">
