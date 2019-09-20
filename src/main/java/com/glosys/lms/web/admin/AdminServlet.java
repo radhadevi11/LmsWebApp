@@ -23,7 +23,6 @@ public class AdminServlet extends HttpServlet {
         if(validAdmin){
             HttpSession session = request.getSession(true);
             session.setAttribute("adminName",adminName);
-            session.getAttribute("email");
             response.sendRedirect(request.getContextPath()+"/secureadmin/adminpage.jsp");
 
         }

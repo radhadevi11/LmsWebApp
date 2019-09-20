@@ -18,16 +18,16 @@
                     <th>Training Program Name</th>
                     <th>Course Name</th>
                     <th>Date</th>
-                    <th>Total Days</th>
-                    <th>HoursPerDay</th>
+                    <th>Duration</th>
+
                 </tr>
                 <c:forEach var="training" items="${trainings}">
                     <tr>
-                    <td>Name</td>
+                    <td>${training.trainingProgramType.name}</td>
                    <td>${training.course.name}</td>
                     <td>${training.date}</td>
-                    <td>days</td>
-                    <td>hours</td>
+                    <td>${training.duration}</td>
+
                     </tr>
                 </c:forEach>
             </table>

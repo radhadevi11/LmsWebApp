@@ -49,7 +49,7 @@
              <a style=margin-right:100px>
              </a>
              <a href="index.jsp"><img src="adminLogo.png" width="40" height="40"><br>${adminName}</a>
-             <a href="admin.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+             <a href="logout"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
         <c:when test="${sessionScope.student != null}">
@@ -57,7 +57,7 @@
                      <a style=margin-right:265px>
                      </a>
                      <a href="index.jsp"><img src="userLogo.png" width="40" height="40"><br>${student.firstName}</a>
-                     <a href="login.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+                     <a href="logout"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
                 </c:when>
         <c:when test="${sessionScope.trainer != null}">
@@ -65,7 +65,7 @@
              <a style=margin-right:265px>
              </a>
              <a href="index.jsp"><img src="trainerlogo2.png" width="40" height="40"><br>${trainer.firstName}</a>
-             <a href="login.jsp"><img src="logout.png" width="40" height="40"><br>Logout</a>
+             <a href="logout"><img src="logout.png" width="40" height="40"><br>Logout</a>
 
         </c:when>
         <c:otherwise>
