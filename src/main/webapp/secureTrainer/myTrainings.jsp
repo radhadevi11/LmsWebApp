@@ -23,10 +23,10 @@
                 </tr>
                 <c:forEach var="training" items="${trainings}">
                     <tr>
-                    <td>${training.trainingProgramType.name}</td>
+                    <td>${training.name}</td>
                    <td>${training.course.name}</td>
                     <td>${training.date}</td>
-                    <td>${training.duration}</td>
+                    <td class="whiteSpace">${training.duration}</td>
 
                     </tr>
                 </c:forEach>
