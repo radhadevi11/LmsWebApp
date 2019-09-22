@@ -37,7 +37,7 @@
         </div>
 
         <div id="schedule">
-             <form action="saveWorkshop" method="POST">
+             <form action="saveWorkshop" method="POST" enctype="multipart/form-data">
                 <h2><center><u>MAKE SCHEDULE</u></center></h2>
 
                 <c:if test="${isExistingWorkshop}">
@@ -68,6 +68,10 @@
                 <div id="dropDown"></div>
                 </select>
                 <br><br>
+
+                <lable>Upload Material</lable><br><br>
+                <input type="file" id="file" name="file"  autocomplete="off">
+                <br>
 
 
                 <button type="submit" value="submit">SUBMIT

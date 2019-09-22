@@ -23,7 +23,7 @@
                 </tr>
                 <c:forEach var="training" items="${trainings}">
                     <tr>
-                    <td>${training.name}</td>
+                    <td>${training.getName()}</td><!-- name property does not work because it is default method in TrainingProgram Interface -->
                    <td>${training.course.name}</td>
                     <td>${training.date}</td>
                     <td class="whiteSpace">${training.duration}</td>
@@ -31,6 +31,7 @@
                     </tr>
                 </c:forEach>
             </table>
+            <a href="/lms_material/abstract%20example.odt">download</a>
             </c:otherwise>
             </c:choose>
 
