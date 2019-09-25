@@ -19,6 +19,7 @@
                     <th>Course Name</th>
                     <th>Date</th>
                     <th>Duration</th>
+                    <th>Download Materials</th>
 
                 </tr>
                 <c:forEach var="training" items="${trainings}">
@@ -27,6 +28,7 @@
                    <td>${training.course.name}</td>
                     <td>${training.date}</td>
                     <td class="whiteSpace">${training.duration}</td>
+                    <td><a href="${training.materialPath}">download</a></td>
 
                     </tr>
                 </c:forEach>

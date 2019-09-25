@@ -43,8 +43,11 @@ public class SaveWorkshopServlet extends HttpServlet {
         Part filePart = request.getPart("file");
         String submittedFileName = filePart.getSubmittedFileName();
 
+        String materialPath1 = "/lms_material/" + uniquePath+ "/" + submittedFileName;
         Workshop workshop = new Workshop(new WorkshopType(workshopTypeId), new Course(courseId),
-                parsedDate,new Trainer(trainerId),uniquePath+File.pathSeparator+submittedFileName);
+                parsedDate,new Trainer(trainerId), materialPath1);
+        System.out.println("material path "+materialPath1);
+
 
         WorkshopController workshopController = new WorkshopController();
         if(workshopController.isExistingWorkshop(workshopTypeId, courseId, parsedDate)) {
@@ -60,8 +63,9 @@ public class SaveWorkshopServlet extends HttpServlet {
                     .forward(request,response);
         }
         else {
-            File basePath = new File(LMS_MATERIAL_PATH+File.pathSeparator+uniquePath);
+            File basePath = new File(LMS_MATERIAL_PATH+uniquePath);
             basePath.mkdir();
+            System.out.println("Base path "+basePath);
             String materialPath = new File(basePath, submittedFileName)
                     .getAbsolutePath();
             filePart.write(materialPath);

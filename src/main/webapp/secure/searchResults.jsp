@@ -25,6 +25,7 @@
 
                 </tr>
                 <c:forEach var="searchResult" items="${searchResults}">
+                    <form action="saveEnrolment" method="post">
                     <tr>
                         <td>${searchResult.course.code}</td>
                         <td>${searchResult.course.name}</td>
@@ -32,9 +33,12 @@
                         <td>${searchResult.date}</td>
                         <td class="whiteSpace">${searchResult.duration}</td>
                         <td>${searchResult.cost}</td>
+                        <input type="hidden" name="id" value="${searchResult.id}">
+                        <td><button type="submit">Enroll</button></td>
                     <td></td>
 
                     </tr>
+                    </form>
                 </c:forEach>
             </table>
             </c:otherwise>

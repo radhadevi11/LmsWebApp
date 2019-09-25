@@ -24,7 +24,7 @@
                         <th>HoursPerDay</th>
                         <th>WorkshopPackage</th>
                         <th>cost</th>
-                        <th>Enroll</th>
+                        <!--><th>Enroll</th><-->
                     </tr>
                 <c:forEach var="workshopEnrolment" items="${workshopEnrolments}">
                 <form action="payNow">
@@ -37,7 +37,7 @@
                     <td>${workshopEnrolment.workshop.workshopType.hoursPerDay}</td>
                     <td>${workshopEnrolment.workshop.workshopType.workshopPackage}</td>
                     <td>${workshopEnrolment.workshop.workshopType.cost}</td>
-                    <td><button type="submit">PAY NOW</button> </td>
+                    <!--<td><button type="submit">PAY NOW</button> </td>-->
                     </tr>
                     </form>
                 </c:forEach>

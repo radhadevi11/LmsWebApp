@@ -20,7 +20,7 @@ public class SaveEnrolmentServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         WorkshopEnrolmentController workshopEnrolmentController = new WorkshopEnrolmentController();
-        int workshopId = Integer.parseInt(request.getParameter("workshopId"));
+        int workshopId = Integer.parseInt(request.getParameter("id"));
         HttpSession session = request.getSession(false);
         Student student = (Student) session.getAttribute("student");
 

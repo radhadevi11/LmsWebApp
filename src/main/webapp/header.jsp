@@ -120,13 +120,13 @@
         </c:when>
         <c:otherwise>
             <a href="/lmsweb/index.jsp"><img src="glosys logo.jpg" width="150" height="50"></a>
-             <a >
-             <div class="search-container">
+             <a style=margin-right:100px>
+
                          <form action="${pageContext.request.contextPath}/secure/search">
                              <input type="text" placeholder="Search.." name="courseName">
-                             <button type="submit"><i class="fa fa-search"></i></button>
+                             <button class="search-btn"><i class="fa fa-search"></i></button>
                          </form>
-                     </div>
+
 
              </a>
                  <a href="login.jsp" ><img src="userLogo.png"  width="40" height="40"><br> Login</a>
@@ -134,7 +134,7 @@
              <a href="signup.jsp"><img src="signUpLogo.png" width="40" height="40"><br>Sign Up</a>
              <a href="admin.jsp"><img src="adminLogo.png" width="40" height="40"><br>Admin</a>
              <a href="trainerLogin.jsp"><img src="trainerlogo2.png" width="45" height="45"><br>Trainer</a>
-             </div>
+
          </c:otherwise>
     </c:choose>
 

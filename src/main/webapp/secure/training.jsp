@@ -47,7 +47,7 @@
 <table id="training">
 <tr><th>Training courses offered</th></tr>
 <c:forEach var="category" items="${courseCategories}">
-    <tr><td><a href="trainingProgramDetails?id=${category.id}">${category.name}</a></td></tr>
+    <tr><td><a href="certificate?id=${category.id}">${category.name}</a></td></tr>
 </c:forEach>
 </table>
 </body>

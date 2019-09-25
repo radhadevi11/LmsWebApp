@@ -27,7 +27,7 @@
                     </tr>
                 <c:forEach var="availableWorkshopsForStudent" items="${availableWorkshopsForStudent}">
                     <tr>
-                    <input type="hidden" name="workshopId" value="${availableWorkshopsForStudent.id}"/>
+                    <input type="hidden" name="id" value="${availableWorkshopsForStudent.id}"/>
                     <td>${availableWorkshopsForStudent.course.name}</td>
                     <td>${availableWorkshopsForStudent.date}</td>
                     <td> ${availableWorkshopsForStudent.workshopType.totalDays}</td>
