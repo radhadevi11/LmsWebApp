@@ -3,6 +3,7 @@ package com.glosys.lms.web.admin;
 import com.glosys.lms.controller.AdminController;
 import com.glosys.lms.dao.AdminDao;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/admin")
 
 public class AdminServlet extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         AdminController adminController = new AdminController();
         String adminName = request.getParameter("adminName");
         String password = request.getParameter("password");
@@ -27,7 +28,8 @@ public class AdminServlet extends HttpServlet {
 
         }
         else{
-            response.sendRedirect(request.getContextPath()+"/admin.jsp");
+            request.setAttribute("isInvalidUser", true);
+            request.getRequestDispatcher("/admin.jsp").forward(request, response);
         }
     }
 }

@@ -1,3 +1,5 @@
+<%@ page import="javax.servlet.*,javax.servlet.http.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	<head>
 	<title>login form
@@ -44,6 +46,9 @@ form {
    </div>
 
 	<div class="log">
+	<c:if test="${isInvalidUser}">
+            <font color="red">Invalid Mail Id or Password</font>
+        </c:if>
 	<form name="loginform" action="/lmsweb/login" method="POST">
         <center><h2><font face="Comic Sans MS">LOGIN</font></h2></center>
 

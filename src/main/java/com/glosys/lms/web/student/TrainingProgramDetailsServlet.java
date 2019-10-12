@@ -49,8 +49,8 @@ public class TrainingProgramDetailsServlet extends HttpServlet {
 
             case RESEARCH_TRAINING:
 
-                ResearchTrainingController researchTrainingController = new ResearchTrainingController();
-                ResearchTrainingInfo researchTrainingInfo = researchTrainingController.getResearchTrainingInfo();
+                ResearchTrainingTypeController researchTrainingTypeController = new ResearchTrainingTypeController();
+                ResearchTrainingInfo researchTrainingInfo = researchTrainingTypeController.getResearchTrainingInfo();
                 request.setAttribute("researchTrainingInfo", researchTrainingInfo);
                 request.getRequestDispatcher("/secure/researchTraining.jsp").forward(request, response);
                 break;

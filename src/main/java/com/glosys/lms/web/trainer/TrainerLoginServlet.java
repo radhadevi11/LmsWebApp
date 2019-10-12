@@ -26,7 +26,9 @@ public class TrainerLoginServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/secureTrainer/trainerPage.jsp");
         }
         else {
-           response.sendRedirect(request.getContextPath()+"/trainerLogin.jsp");
+            request.setAttribute("isInvalidUser", true);
+            request.getRequestDispatcher("/trainerLogin.jsp").forward(request, response);
+
         }
     }
 }

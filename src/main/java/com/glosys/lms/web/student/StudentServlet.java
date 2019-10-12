@@ -7,10 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebServlet("/signup")
 public class StudentServlet extends HttpServlet {
-    public void doPost(HttpServletRequest request, HttpServletResponse  response){
+    public void doPost(HttpServletRequest request, HttpServletResponse  response) throws IOException {
 
 
         StudentController studentController = new StudentController();
@@ -26,6 +27,7 @@ public class StudentServlet extends HttpServlet {
         Student student = new Student(firstName,lastName,gender,emailId,collegeName,password);
 
         studentController.saveStudent(student);
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
 
 
 

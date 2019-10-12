@@ -28,7 +28,9 @@ public class LoginServlet extends HttpServlet {
        Student student = loginController.getValidUser(mailId, password);
 
         if(student == null){
-            response.sendRedirect(request.getContextPath()+"/login.jsp");
+            request.setAttribute("isInvalidUser", true);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+
 
 
         }

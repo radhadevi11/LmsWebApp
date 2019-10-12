@@ -41,7 +41,7 @@
         <th>noOfCourses</th>
         <th>cost</th>
     </tr>
-<c:forEach var="researchTraining" items="${researchTrainingInfo.researchTrainings}">
+<c:forEach var="researchTraining" items="${researchTrainingInfo.researchTrainingTypes}">
     <tr>
         <td>${researchTraining.modeOfTraining}</td>
         <td>${researchTraining.duration}</td>

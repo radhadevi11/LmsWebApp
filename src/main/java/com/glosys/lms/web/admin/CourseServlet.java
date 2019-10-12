@@ -1,4 +1,4 @@
-package com.glosys.lms.web.student;
+package com.glosys.lms.web.admin;
 
 
 import com.glosys.lms.controller.CourseController;

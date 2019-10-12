@@ -1,9 +1,7 @@
 package com.glosys.lms.web.admin;
 
-import com.glosys.lms.controller.CorporateTrainingController;
-import com.glosys.lms.controller.InplantTrainingController;
-import com.glosys.lms.controller.ResearchTrainingController;
-import com.glosys.lms.controller.WorkshopTypeController;
+import com.glosys.lms.controller.*;
+import com.glosys.lms.entity.ResearchTrainingType;
 import com.glosys.lms.model.CorporateTrainingInfo;
 import com.glosys.lms.model.InplantTrainingInfo;
 import com.glosys.lms.model.ResearchTrainingInfo;
@@ -50,7 +48,7 @@ public class TrainingProgramDetailsServlet extends HttpServlet {
 
             case RESEARCH_TRAINING:
 
-                ResearchTrainingController researchTrainingController = new ResearchTrainingController();
+                ResearchTrainingTypeController researchTrainingController = new ResearchTrainingTypeController();
                 ResearchTrainingInfo researchTrainingInfo = researchTrainingController.getResearchTrainingInfo();
                 request.setAttribute("researchTrainingInfo", researchTrainingInfo);
                 request.getRequestDispatcher("/secureadmin/researchTraining.jsp").forward(request, response);
